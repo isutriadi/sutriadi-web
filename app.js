@@ -1,4 +1,5 @@
 /* ===== KONFIGURASI — edit bagian ini ===== */
+const ASSET_V = "20261122045534"; // diisi otomatis oleh tools/stamp.py sebelum push
 const CONFIG = {
   whatsapp: "628114550260"        // nomor WhatsApp pemesanan, format internasional tanpa +
 };
@@ -39,7 +40,7 @@ function card(a) {
   const live = a.status === "live";
   const badge = a.status ? el("span", { class: "status " + (live ? "live" : "dev") }, live ? "● Sudah live" : "● Dalam pengembangan") : "";
   return el("article", { class: "app" },
-    el("div", { class: "ico", "aria-hidden": "true" }, /\.(png|svg|webp|jpe?g)$/i.test(a.icon || "") ? el("img", { src: a.icon, alt: "", width: "56", height: "56", loading: "lazy" }) : (a.icon || "🧩")),
+    el("div", { class: "ico", "aria-hidden": "true" }, /\.(png|svg|webp|jpe?g)$/i.test(a.icon || "") ? el("img", { src: a.icon + "?v=" + ASSET_V, alt: "", width: "56", height: "56", loading: "lazy" }) : (a.icon || "🧩")),
     badge,
     el("h3", {}, a.name),
     el("p", {}, a.desc),
