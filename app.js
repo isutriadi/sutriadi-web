@@ -1,7 +1,6 @@
 /* ===== KONFIGURASI — edit bagian ini ===== */
 const CONFIG = {
-  whatsapp: "6280000000000",      // GANTI: nomor WhatsApp format internasional tanpa + (contoh 62812xxxxxxx)
-  email: "halo@sutriadi.com"      // GANTI: alamat email penerima pesanan
+  whatsapp: "628114550260"        // nomor WhatsApp pemesanan, format internasional tanpa +
 };
 
 /* Daftar aplikasi — CONTOH, ganti dengan aplikasi Anda.
@@ -72,17 +71,12 @@ const toggle = $(".nav-toggle"), menu = $("#menu");
 toggle.addEventListener("click", () => toggle.setAttribute("aria-expanded", String(menu.classList.toggle("open"))));
 menu.addEventListener("click", e => { if (e.target.tagName === "A") { menu.classList.remove("open"); toggle.setAttribute("aria-expanded", "false"); } });
 
-/* Formulir pesanan -> WhatsApp / Email */
-let via = "wa";
-document.querySelectorAll("#order button[type=submit]").forEach(b => b.addEventListener("click", () => via = b.dataset.via));
+/* Formulir pesanan -> WhatsApp */
 $("#order").addEventListener("submit", e => {
   e.preventDefault();
   const f = e.target, nama = f.nama.value.trim(), pesan = f.pesan.value.trim();
   $("#err").hidden = !!(nama && pesan);
   if (!nama || !pesan) return;
   const text = `Halo, saya ${nama}.\nJenis aplikasi: ${f.jenis.value}\n\n${pesan}`;
-  const url = via === "wa"
-    ? `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(text)}`
-    : `mailto:${CONFIG.email}?subject=${encodeURIComponent("Pesan aplikasi: " + f.jenis.value)}&body=${encodeURIComponent(text)}`;
-  window.open(url, via === "wa" ? "_blank" : "_self", "noopener");
+  window.open(`https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(text)}`, "_blank", "noopener");
 });
