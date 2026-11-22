@@ -1,5 +1,5 @@
 /* ===== KONFIGURASI — edit bagian ini ===== */
-const ASSET_V = "20261122050022"; // diisi otomatis oleh tools/stamp.py sebelum push
+const ASSET_V = "20261122050044"; // diisi otomatis oleh tools/stamp.py sebelum push
 const CONFIG = {
   whatsapp: "628114550260"        // nomor WhatsApp pemesanan, format internasional tanpa +
 };
