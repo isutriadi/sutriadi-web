@@ -6,16 +6,16 @@ const CONFIG = {
 /* Daftar aplikasi.
    status: "live" | "dev" | "" (kosong = lencana status disembunyikan)   |   url / repo boleh dikosongkan ("") */
 const APPS = [
-  { name: "SONIK", icon: "📨", category: "Pemerintahan", status: "live",
+  { name: "SONIK", icon: "assets/apps/sonik.png", category: "Pemerintahan", status: "live",
     desc: "Aplikasi Disposisi Elektronik. Digunakan di Pemerintah Kota Kotamobagu.",
     tags: ["Disposisi Elektronik", "Pemkot Kotamobagu"], url: "", repo: "" },
-  { name: "AKUOI", icon: "🔑", category: "Pemerintahan", status: "live",
+  { name: "AKUOI", icon: "assets/apps/akuoi.png", category: "Pemerintahan", status: "live",
     desc: "Akun Kotamobagu Terintegrasi. Digunakan di Pemerintah Kota Kotamobagu.",
     tags: ["Akun Terintegrasi", "Pemkot Kotamobagu"], url: "", repo: "" },
-  { name: "Jago Basisdata", icon: "🗄️", category: "Android", status: "",
+  { name: "Jago Basisdata", icon: "assets/apps/jago-basisdata.png", category: "Android", status: "",
     desc: "Klien SQL untuk Android.",
     tags: ["Android", "SQL"], url: "", repo: "" },
-  { name: "Jago Kode", icon: "📝", category: "Android", status: "",
+  { name: "Jago Kode", icon: "assets/apps/jago-kode.png", category: "Android", status: "",
     desc: "Editor teks dan kode untuk Android.",
     tags: ["Android", "Editor"], url: "", repo: "" }
 ];
@@ -39,7 +39,7 @@ function card(a) {
   const live = a.status === "live";
   const badge = a.status ? el("span", { class: "status " + (live ? "live" : "dev") }, live ? "● Sudah live" : "● Dalam pengembangan") : "";
   return el("article", { class: "app" },
-    el("div", { class: "ico", "aria-hidden": "true" }, a.icon || "🧩"),
+    el("div", { class: "ico", "aria-hidden": "true" }, /\.(png|svg|webp|jpe?g)$/i.test(a.icon || "") ? el("img", { src: a.icon, alt: "", width: "56", height: "56", loading: "lazy" }) : (a.icon || "🧩")),
     badge,
     el("h3", {}, a.name),
     el("p", {}, a.desc),
