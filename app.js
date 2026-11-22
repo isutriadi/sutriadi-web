@@ -1,5 +1,5 @@
 /* ===== KONFIGURASI — edit bagian ini ===== */
-const ASSET_V = "20261122045724"; // diisi otomatis oleh tools/stamp.py sebelum push
+const ASSET_V = "20261122045859"; // diisi otomatis oleh tools/stamp.py sebelum push
 const CONFIG = {
   whatsapp: "628114550260"        // nomor WhatsApp pemesanan, format internasional tanpa +
 };
@@ -7,12 +7,12 @@ const CONFIG = {
 /* Daftar aplikasi.
    status: "live" | "dev" | "" (kosong = lencana status disembunyikan)   |   url / repo boleh dikosongkan ("") */
 const APPS = [
-  { name: "SONIK", icon: "assets/apps/sonik.png", category: "Pemerintahan", status: "live",
-    desc: "Aplikasi Disposisi Elektronik. Digunakan di Pemerintah Kota Kotamobagu.",
-    tags: ["Disposisi Elektronik", "Pemkot Kotamobagu"], url: "", repo: "" },
   { name: "AKUOI", icon: "assets/apps/akuoi.png", category: "Pemerintahan", status: "live",
     desc: "Akun Kotamobagu Terintegrasi. Digunakan di Pemerintah Kota Kotamobagu.",
     tags: ["Akun Terintegrasi", "Pemkot Kotamobagu"], url: "", repo: "" },
+  { name: "SONIK", icon: "assets/apps/sonik.png", category: "Pemerintahan", status: "live",
+    desc: "Aplikasi Disposisi Elektronik. Digunakan di Pemerintah Kota Kotamobagu.",
+    tags: ["Disposisi Elektronik", "Pemkot Kotamobagu"], url: "", repo: "" },
   { name: "SIMESPAM", icon: "assets/apps/simespam.png", category: "Pemerintahan", status: "live",
     desc: "Aplikasi layanan air. Digunakan di Pemerintah Kota Kotamobagu.",
     tags: ["Layanan Air", "Pemkot Kotamobagu"], url: "", repo: "" },
