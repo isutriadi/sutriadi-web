@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sutriadi Web — Portofolio & Jasa Pembuatan Aplikasi</title>
+  <meta name="description" content="Daftar aplikasi dan portofolio karya Sutriadi. Terima pesanan pembuatan aplikasi web dan sistem informasi sesuai kebutuhan Anda.">
+  <meta property="og:title" content="Sutriadi Web — Portofolio & Jasa Pembuatan Aplikasi">
+  <meta property="og:description" content="Daftar aplikasi dan portofolio karya Sutriadi. Terima pesanan pembuatan aplikasi.">
+  <meta property="og:image" content="https://sutriadi.com/assets/sutriadi-banner.png">
+  <meta property="og:url" content="https://sutriadi.com/">
+  <link rel="icon" type="image/png" href="assets/sutriadi.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap nav-in">
+      <a href="#top" class="brand"><img src="assets/sutriadi-banner.png" alt="Sutriadi web" height="34"></a>
+      <button class="nav-toggle" aria-label="Menu" aria-expanded="false">☰</button>
+      <nav id="menu">
+        <a href="#aplikasi">Aplikasi</a>
+        <a href="#layanan">Layanan</a>
+        <a href="#proses">Proses</a>
+        <a href="#pesan" class="btn btn-sm">Pesan Aplikasi</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="wrap hero-in">
+        <div>
+          <p class="eyebrow">Portofolio & Jasa Pengembangan Aplikasi</p>
+          <h1>Aplikasi yang <span class="hl">dibuat rapi</span>, dipakai nyaman, dan siap berkembang.</h1>
+          <p class="lead">Saya membangun aplikasi web dan sistem informasi sesuai kebutuhan. Lihat karya yang sudah ada, atau ceritakan ide Anda dan kita wujudkan bersama.</p>
+          <div class="cta">
+            <a href="#aplikasi" class="btn">Lihat Aplikasi</a>
+            <a href="#pesan" class="btn btn-ghost">Pesan Aplikasi</a>
+          </div>
+          <dl class="stats">
+            <div><dt id="stat-apps">0</dt><dd>Aplikasi</dd></div>
+            <div><dt id="stat-live">0</dt><dd>Sudah live</dd></div>
+            <div><dt>1:1</dt><dd>Komunikasi langsung</dd></div>
+          </dl>
+        </div>
+        <div class="blocks" aria-hidden="true">
+          <span class="b b1"></span><span class="b b2"></span><span class="b b3"></span>
+          <span class="b b4"></span><span class="b b5"></span><span class="b b6"></span>
+        </div>
+      </div>
+    </section>
+
+    <section id="aplikasi" class="section">
+      <div class="wrap">
+        <h2>Daftar Aplikasi</h2>
+        <p class="sub">Beberapa aplikasi yang sudah saya kerjakan. Gunakan filter untuk menyaring berdasarkan kategori.</p>
+        <div class="filters" id="filters" role="group" aria-label="Filter kategori"></div>
+        <div class="grid" id="grid"></div>
+        <p class="empty" id="empty" hidden>Belum ada aplikasi di kategori ini.</p>
+      </div>
+    </section>
+
+    <section id="layanan" class="section alt">
+      <div class="wrap">
+        <h2>Layanan</h2>
+        <p class="sub">Dari ide sampai aplikasi berjalan.</p>
+        <div class="cards">
+          <article class="card"><h3>Aplikasi Web Custom</h3><p>Aplikasi dibuat khusus untuk alur kerja Anda: dashboard, pencatatan, pelaporan, hingga integrasi.</p></article>
+          <article class="card"><h3>Sistem Informasi</h3><p>Sistem untuk instansi, sekolah, usaha, atau komunitas dengan manajemen pengguna dan hak akses.</p></article>
+          <article class="card"><h3>Website & Landing Page</h3><p>Website profil dan halaman promosi yang cepat, responsif, dan mudah ditemukan di mesin pencari.</p></article>
+          <article class="card"><h3>Perawatan & Pengembangan</h3><p>Perbaikan bug, penambahan fitur, dan pendampingan setelah aplikasi dipakai.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="proses" class="section">
+      <div class="wrap">
+        <h2>Cara Pemesanan</h2>
+        <ol class="steps">
+          <li><strong>Konsultasi</strong><span>Ceritakan kebutuhan dan target Anda. Gratis.</span></li>
+          <li><strong>Penawaran</strong><span>Ruang lingkup, estimasi waktu, dan biaya yang jelas.</span></li>
+          <li><strong>Pengembangan</strong><span>Dikerjakan bertahap dengan demo berkala.</span></li>
+          <li><strong>Peluncuran</strong><span>Aplikasi online, disertai serah terima dan panduan.</span></li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="pesan" class="section order">
+      <div class="wrap order-in">
+        <div>
+          <h2>Punya ide aplikasi?</h2>
+          <p class="sub">Isi formulir singkat ini. Pesan akan dibuka di WhatsApp atau email Anda, tinggal dikirim.</p>
+        </div>
+        <form id="order" novalidate>
+          <label>Nama<input name="nama" required autocomplete="name"></label>
+          <label>Jenis aplikasi
+            <select name="jenis">
+              <option>Aplikasi web custom</option>
+              <option>Sistem informasi</option>
+              <option>Website / landing page</option>
+              <option>Lainnya</option>
+            </select>
+          </label>
+          <label>Ceritakan kebutuhan Anda<textarea name="pesan" rows="4" required></textarea></label>
+          <p class="err" id="err" role="alert" hidden>Mohon isi nama dan kebutuhan Anda.</p>
+          <div class="cta">
+            <button type="submit" class="btn" data-via="wa">Kirim via WhatsApp</button>
+            <button type="submit" class="btn btn-ghost" data-via="mail">Kirim via Email</button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap foot-in">
+      <img src="assets/sutriadi.png" alt="" width="28" height="28">
+      <p>© <span id="year"></span> Sutriadi. Semua hak dilindungi.</p>
+      <a href="https://github.com/isutriadi" rel="noopener">GitHub</a>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
