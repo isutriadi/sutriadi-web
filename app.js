@@ -3,21 +3,21 @@ const CONFIG = {
   whatsapp: "628114550260"        // nomor WhatsApp pemesanan, format internasional tanpa +
 };
 
-/* Daftar aplikasi — CONTOH, ganti dengan aplikasi Anda.
-   status: "live" | "dev"   |   url / repo boleh dikosongkan ("") */
+/* Daftar aplikasi.
+   status: "live" | "dev" | "" (kosong = lencana status disembunyikan)   |   url / repo boleh dikosongkan ("") */
 const APPS = [
-  { name: "Aplikasi Contoh 1", icon: "📋", category: "Sistem Informasi", status: "live",
-    desc: "Deskripsi singkat aplikasi: apa masalah yang diselesaikan dan siapa penggunanya.",
-    tags: ["PHP", "MySQL"], url: "", repo: "" },
-  { name: "Aplikasi Contoh 2", icon: "📊", category: "Dashboard", status: "live",
-    desc: "Dashboard data dengan grafik dan ekspor laporan agar keputusan lebih cepat.",
-    tags: ["JavaScript", "Chart"], url: "", repo: "" },
-  { name: "Aplikasi Contoh 3", icon: "🛒", category: "Web App", status: "dev",
-    desc: "Aplikasi pencatatan dan transaksi sederhana untuk usaha kecil.",
-    tags: ["Python", "SQLite"], url: "", repo: "" },
-  { name: "Aplikasi Contoh 4", icon: "🌐", category: "Website", status: "live",
-    desc: "Website profil responsif dengan halaman promosi dan formulir kontak.",
-    tags: ["HTML", "CSS"], url: "", repo: "" }
+  { name: "SONIK", icon: "📨", category: "Pemerintahan", status: "live",
+    desc: "Aplikasi Disposisi Elektronik. Digunakan di Pemerintah Kota Kotamobagu.",
+    tags: ["Disposisi Elektronik", "Pemkot Kotamobagu"], url: "", repo: "" },
+  { name: "AKUOI", icon: "🔑", category: "Pemerintahan", status: "live",
+    desc: "Akun Kotamobagu Terintegrasi. Digunakan di Pemerintah Kota Kotamobagu.",
+    tags: ["Akun Terintegrasi", "Pemkot Kotamobagu"], url: "", repo: "" },
+  { name: "Jago Basisdata", icon: "🗄️", category: "Android", status: "",
+    desc: "Klien SQL untuk Android.",
+    tags: ["Android", "SQL"], url: "", repo: "" },
+  { name: "Jago Kode", icon: "📝", category: "Android", status: "",
+    desc: "Editor teks dan kode untuk Android.",
+    tags: ["Android", "Editor"], url: "", repo: "" }
 ];
 /* ========================================== */
 
@@ -37,9 +37,10 @@ function card(a) {
   if (a.url) links.append(el("a", { href: a.url, target: "_blank", rel: "noopener" }, "Buka →"));
   if (a.repo) links.append(el("a", { href: a.repo, target: "_blank", rel: "noopener" }, "Kode"));
   const live = a.status === "live";
+  const badge = a.status ? el("span", { class: "status " + (live ? "live" : "dev") }, live ? "● Sudah live" : "● Dalam pengembangan") : "";
   return el("article", { class: "app" },
     el("div", { class: "ico", "aria-hidden": "true" }, a.icon || "🧩"),
-    el("span", { class: "status " + (live ? "live" : "dev") }, live ? "● Sudah live" : "● Dalam pengembangan"),
+    badge,
     el("h3", {}, a.name),
     el("p", {}, a.desc),
     el("div", { class: "tags" }, a.tags.map(t => el("span", { class: "tag" }, t))),
